@@ -22,7 +22,6 @@ namespace DbCommon
         private DbMaintenanceModel db1;
         private DbMaintenanceStatus dbs;
         private Boolean TaskWorking;
-
         private Boolean HasToDbBackup;
 
 

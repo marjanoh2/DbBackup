@@ -195,15 +195,15 @@ namespace DbCommon
                 conn.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(conn))
                 {
-                    cmd.CommandText = "INSERT INTO db_maintenance(server_db_address,server_db_name,server_db_pwd,server_db_uid,backup_destination )"
-                        + "VALUES (@server_db_address,@server_db_name,@server_db_pwd,@server_db_uid,@backup_destination)";
+                    cmd.CommandText = "INSERT INTO db_maintenance(server_db_address,server_db_name,server_db_pwd,server_db_uid,backup_destination,backup_time )"
+                        + "VALUES (@server_db_address,@server_db_name,@server_db_pwd,@server_db_uid,@backup_destination,@backup_time)";
 
                     cmd.Prepare();
                     cmd.Parameters.AddWithValue("@server_db_address", dbMaintenance.ClientDbAddress);
                     cmd.Parameters.AddWithValue("@server_db_name", dbMaintenance.ClientDbName);
                     cmd.Parameters.AddWithValue("@server_db_uid", dbMaintenance.ClientDbUserName);
                     cmd.Parameters.AddWithValue("@server_db_pwd", dbMaintenance.ClientDbPassword);
-    
+                    cmd.Parameters.AddWithValue("@backup_time", dbMaintenance.BackupTime);
                     cmd.Parameters.AddWithValue("@backup_destination", dbMaintenance.BackupDestination);
                     try
                     {
@@ -232,6 +232,7 @@ namespace DbCommon
                         + ", server_db_name = @server_db_name "
                         + ", server_db_pwd = @server_db_pwd "
                         + ", server_db_uid = @server_db_uid "
+                        + ", backup_time = @backup_time "
                         + ", backup_destination = @backup_destination "
                         + " WHERE Id = @Id";
                     cmd.Prepare();
@@ -240,6 +241,7 @@ namespace DbCommon
                     cmd.Parameters.AddWithValue("@server_db_uid", dbMaintenance.ClientDbUserName);
                     cmd.Parameters.AddWithValue("@server_db_pwd", dbMaintenance.ClientDbPassword);
                     cmd.Parameters.AddWithValue("@backup_destination", dbMaintenance.BackupDestination);
+                    cmd.Parameters.AddWithValue("@backup_time", dbMaintenance.BackupTime);
                     cmd.Parameters.AddWithValue("@Id", dbMaintenance.Id);
                     try
                     {

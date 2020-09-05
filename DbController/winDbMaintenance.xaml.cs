@@ -38,7 +38,7 @@ namespace WpfApp1
             dbm.ClientDbUserName = txtServerUsername.Text;
             dbm.ClientDbPassword = txtServerPassword.Password;
             dbm.BackupDestination = txtBackupDestination.Text;
-
+            dbm.BackupTime = Convert.ToDateTime("2020-01-01 07:00:00");
 
             //double.TryParse(txtSyncInterval.Text, out syncInterval);
  
