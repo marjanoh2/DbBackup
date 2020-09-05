@@ -23,6 +23,7 @@
    1. DbCommon 
    2. DbController
    3. DbService
+   
 Користени готови компоненти:
    1. Quartz - https://github.com/quartz-scheduler/quartz
    2. Topshelf - https://github.com/Topshelf/Topshelf
