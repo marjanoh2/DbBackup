@@ -97,6 +97,7 @@
         }
    
    4. Изглед на апликацијата
+   ![image](https://raw.githubusercontent.com/marjanoh2/DbBackup/master/dbBackup1.jpg)
    
    
 
