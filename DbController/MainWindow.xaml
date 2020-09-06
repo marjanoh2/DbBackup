@@ -10,14 +10,14 @@
         <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Margin="10,218,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="772" VerticalScrollBarVisibility="Auto" Height="192"/>
         <Label Content="Service status: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.667,0.872" Width="94" Height="25"/>
         <Button x:Name="btnAdd" Content="Add new" HorizontalAlignment="Left" Margin="693,40,0,0" VerticalAlignment="Top" Width="89" Click="btnAdd_Click" Height="38"/>
-        <ListView x:Name="lvDb" HorizontalAlignment="Left" Height="130" Margin="10,83,0,0" VerticalAlignment="Top" Width="772">
+        <ListView x:Name="lvDb" HorizontalAlignment="Left" Height="317" Margin="10,83,0,0" VerticalAlignment="Top" Width="772">
 
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" Width="0"/>
                     <GridViewColumn Header="Database" DisplayMemberBinding="{Binding server_db_name}" Width="250"/>
-                    <GridViewColumn Header="Last Backup" DisplayMemberBinding="{Binding last_backup}" Width="250"/>
-             
+                    <GridViewColumn Header="Last Backup" DisplayMemberBinding="{Binding last_backup}" Width="200"/>
+                    <GridViewColumn Header="Last Backup Status" DisplayMemberBinding="{Binding status_backup}" Width="300"/>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -26,7 +26,7 @@
         <Button x:Name="btnErrorLog" Content="Error Log" HorizontalAlignment="Left" Margin="368,40,0,0" VerticalAlignment="Top" Width="89" Height="38" Click="btnErrorLog_Click"/>
         <Label x:Name="lblServiceStatus" Content="Service status: " HorizontalAlignment="Left" Margin="92,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.667,0.872" Width="94" Height="25"/>
         <Button x:Name="btnService" Content="Status" HorizontalAlignment="Left" Margin="15,40,0,0" VerticalAlignment="Top" Width="89" Height="38" Click="btnService_Click"/>
-        <Button x:Name="btnErrorLog_Copy" Content="Test" HorizontalAlignment="Left" Margin="249,40,0,0" VerticalAlignment="Top" Width="89" Height="38" Click="btnErrorLog_Copy_Click"/>
+        <Button x:Name="btnErrorLog_Copy" Content="Test" HorizontalAlignment="Left" Margin="249,40,0,0" VerticalAlignment="Top" Width="89" Height="38" Click="btnErrorLog_Copy_Click" Visibility="Hidden"/>
 
     </Grid>
 </Window>

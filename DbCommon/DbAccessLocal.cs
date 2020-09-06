@@ -386,7 +386,7 @@ namespace DbCommon
             {
                 using (SQLiteConnection conn = new SQLiteConnection(GlobalVariables.LocalDbConnString))
                 {
-                    string sqlQuery = @"SELECT dbm.Id,dbm.server_db_name,strftime('%d-%m-%Y %H:%M:%S', dbs.last_backup)  FROM db_maintenance dbm left join db_maintenance_status dbs on dbs.db_id=dbm.Id ";
+                    string sqlQuery = @"SELECT dbm.Id,dbm.server_db_name,strftime('%d-%m-%Y %H:%M:%S', dbs.last_backup) as last_backup, dbs.status_backup  FROM db_maintenance dbm left join db_maintenance_status dbs on dbs.db_id=dbm.Id ";
                     using (SQLiteCommand cmd = new SQLiteCommand(sqlQuery, conn))
                     {
 

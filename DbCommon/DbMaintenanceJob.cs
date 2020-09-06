@@ -62,10 +62,10 @@ namespace DbCommon
             dbs = new DbAccessLocal().DbMaintenanceStatusGet(db1.Id);
 
             if (dbs.DbId == 0)
-            { LastDbBackup = new DateTime(1900, 01, 01); }
+            { LastDbBackup = new DateTime(1900, 01, 01);  }
             else { LastDbBackup = dbs.LastBackup; }
-
-            if ((DateTime.Now - LastDbBackup).TotalSeconds > (db1.BackupTime.AddSeconds(86400) -db1.BackupTime).TotalSeconds )
+            //            if ((DateTime.Now - LastDbBackup).TotalSeconds > (db1.BackupTime.AddSeconds(86400) -db1.BackupTime).TotalSeconds )
+            if ((DateTime.Now - LastDbBackup).TotalSeconds > (db1.BackupTime.AddSeconds(180) -db1.BackupTime).TotalSeconds )
             { HasToDbBackup = true;}
 
             if (HasToDbBackup)
@@ -92,6 +92,15 @@ namespace DbCommon
             }
 
             GlobalVariables.dbmTaskDictionary[db1.Id] = false;
+            if (dbs.DbId==0)
+            {
+                dbs.DbId = db1.Id;
+                new DbAccessLocal().DbMaintenanceStatusInsert(dbs);
+            }
+            else
+            { 
+            new DbAccessLocal().DbMaintenanceStatusUpdate(dbs);
+            }
         }
 
 
