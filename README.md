@@ -96,8 +96,15 @@
             return Results.Ok();
         }
    
-   4. Изглед на апликацијата
+   4.Изглед на апликацијата
+   -Почетна форма
    ![image](https://raw.githubusercontent.com/marjanoh2/DbBackup/master/dbBackup1.jpg)
+   
+   - Форма за додавање/менување параметри 
+    ![image](https://raw.githubusercontent.com/marjanoh2/DbBackup/master/dbBackup2.jpg)
+    
+    - Форма за приказ на грешки
+    ![image](https://raw.githubusercontent.com/marjanoh2/DbBackup/master/dbBackup3.jpg)
    
    
 
